@@ -17,6 +17,7 @@ export interface TSCompilerOptions {
   readonly outDir?: string;
   readonly rootDir?: string;
   readonly forceConsistentCasingInFileNames?: boolean;
+  readonly skipLibCheck?: boolean;
 }
 
 export interface ProjectInfo {
@@ -209,6 +210,7 @@ export async function loadProjectInfo(
     tsc: {
       outDir: pkg.jsii?.tsc?.outDir,
       rootDir: pkg.jsii?.tsc?.rootDir,
+      skipLibCheck: pkg.jsii?.tsc?.skipLibCheck,
     },
     bin: pkg.bin,
     exports: pkg.exports,
